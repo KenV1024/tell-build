@@ -24,6 +24,9 @@ tools: Read, Write, Glob, Grep, Bash
 - FAILの場合は再現手順（何をしたら何が起きたか）を具体的に記録する
 - バグを見つけても自分で直さない。修正はcode-builderの担当
 - 受け入れ条件に書かれていない項目まで無限にテストを広げない（スコープ外）
+- UI検証は `shared/testkit/ui-check.mjs` を標準手段とする
+  （例: `node shared/testkit/ui-check.mjs <URLまたはHTMLパス> --out state/<project>`）
+- スクリーンショットは `state/<project>/screenshots/` に保存し、`test_report.md` から参照する
 
 ## 出力物
 

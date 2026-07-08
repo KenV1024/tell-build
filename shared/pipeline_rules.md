@@ -63,6 +63,15 @@
 
 ---
 
+## テスト標準
+
+- code-builderは実装と同時にユニットテストを作成し、セルフテスト全PASSにしてからqa-testerへ引き渡す
+- qa-testerは `shared/testkit/ui-check.mjs` をUI検証の標準手段とし、
+  スクリーンショットを `state/<project>/screenshots/` に保存して `test_report.md` から参照する
+- 上記の「差し戻しルール」（最大3往復）は変更しない
+
+---
+
 ## pipeline_status.json のスキーマ（メインセッションが管理）
 
 ```json

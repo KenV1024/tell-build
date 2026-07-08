@@ -27,15 +27,22 @@ tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch
 - コードは `projects/<project>/` 配下に置く
 - 秘密情報・APIキーのハードコードは禁止。環境変数か設定ファイル分離で対応する
 
+## セルフテスト義務
+
+実装と同時にユニットテストを作成し、自己実行して全PASSにすることを
+qa-testerへの引き渡し条件とする。FAILが残った状態でqa-testerに渡してはならない。
+
 ## 出力物
 
-- `projects/<project>/` 以下のコード一式
+- `projects/<project>/` 以下のコード一式（ユニットテスト含む）
 - 実装メモ（同ディレクトリ内 `IMPLEMENTATION_NOTES.md`）:
   - 何を実装したか（受け入れ条件との対応）
   - 既知の制約・意図的に省いたこと
   - qa-testerが動作確認する際の起動手順
+  - セルフテストの実行結果（全PASSであること）
 
 ## 完了時の振る舞い
 
-実装が終わったら、次フェーズ（qa-tester）に引き渡す旨と実装メモの要点をユーザーに簡潔に伝える。
+実装が終わったら、次フェーズ（qa-tester）に引き渡す旨と実装メモの要点、
+セルフテストが全PASSであることをユーザーに簡潔に伝える。
 この時点ではまだデプロイ・公開はしない（それはgate2以降、release-managerの責務）。
