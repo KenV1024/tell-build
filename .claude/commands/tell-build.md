@@ -1,10 +1,10 @@
-# /forge — 新規プロジェクトの起動・再開
+# /tell-build — 新規プロジェクトの起動・再開
 
 引数: $ARGUMENTS
 
 ## 使い方
 ```
-/forge <project-name> "<作りたいものの説明>"
+/tell-build <project-name> "<作りたいものの説明>"
 ```
 project-nameが引数になければユーザーに確認する。
 
@@ -48,4 +48,4 @@ project-nameが引数になければユーザーに確認する。
 ### 注意
 - 各エージェントの入出力ファイル形式は `shared/pipeline_rules.md` を正典とする
 - ゲート1・ゲート2をスキップして先のフェーズに進んではならない
-- 途中で中断された場合は `/forge <project-name>` を再実行すれば `pipeline_status.json` から再開できる
+- 途中で中断された場合は `/tell-build <project-name>` を再実行すれば `pipeline_status.json` から再開できる

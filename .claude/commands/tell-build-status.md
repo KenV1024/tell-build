@@ -1,4 +1,4 @@
-# /forge-status — 進行中プロジェクトの状態確認
+# /tell-build-status — 進行中プロジェクトの状態確認
 
 引数: $ARGUMENTS（省略可。project-nameを指定すればそのプロジェクトのみ表示）
 

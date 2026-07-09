@@ -1,6 +1,6 @@
 ---
 name: spec-interviewer
-description: 要件ヒアリング専門。非エンジニアの「作りたいもの」を対話で掘り下げ、承認可能な仕様書と実装計画に変換する。実装は一切しない。/forgeコマンドの最初のフェーズで使用。
+description: 要件ヒアリング専門。非エンジニアの「作りたいもの」を対話で掘り下げ、承認可能な仕様書と実装計画に変換する。実装は一切しない。/tell-buildコマンドの最初のフェーズで使用。
 model: claude-opus-4-8
 effort: high
 tools: Read, Write, Glob, Grep, WebSearch

@@ -1,9 +1,9 @@
 # E2Eテスト計画書
 
-**目的**: forgeパイプラインが設計どおりに完走すること・ゲートと差し戻しが機能することを、
+**目的**: TellBuildパイプラインが設計どおりに完走すること・ゲートと差し戻しが機能することを、
 実際のプロジェクトで検証する（`quality_checklist.md` C群に対応）。
 
-**実施方法**: `forge` ディレクトリでClaude Codeを起動し（サブエージェントはforge配下でのみ有効）、
+**実施方法**: `tell-build` ディレクトリでClaude Codeを起動し（サブエージェントはtell-build配下でのみ有効）、
 以下のシナリオを順に実行する。結果は本ファイル末尾の記録表に記入する。
 
 ---
@@ -20,7 +20,7 @@
 
 ## シナリオ1: ハッピーパス完走（C-1）
 
-1. `/forge kw-counter "広告文の全角半角バイト数カウンター"` を実行
+1. `/tell-build kw-counter "広告文の全角半角バイト数カウンター"` を実行
 2. spec-interviewerの質問に答え、spec.mdが生成されることを確認
 3. ゲート1で承認 → code-builderが `projects/kw-counter/` に実装することを確認
 4. qa-testerが受け入れ条件を**実際に実行して**判定することを確認（コードレビューだけならNG）
@@ -50,20 +50,20 @@
 ## シナリオ4: 中断・再開（C-4）
 
 1. シナリオ1の途中（buildフェーズ完了時点など）でセッションを終了する
-2. 新しいセッションで `/forge kw-counter` を実行
+2. 新しいセッションで `/tell-build kw-counter` を実行
 3. `pipeline_status.json` の `phase` から正しく再開されることを確認（最初からやり直しになったらNG）
 
 **合格基準**: 記録済みフェーズの続きから再開する。
 
-## シナリオ5: /forge-improve 振り分け（C-5・推奨）
+## シナリオ5: /tell-build-improve 振り分け（C-5・推奨）
 
-1. 完走後に `/forge-improve kw-counter "半角カナが1Bで数えられるか不安"` を実行
+1. 完走後に `/tell-build-improve kw-counter "半角カナが1Bで数えられるか不安"` を実行
 2. improvement-analystが「バグ or 仕様の問題」を根拠つきで判定することを確認
 3. 承認後、正しい差し戻し先（code-builder / spec-interviewer）に進むことを確認
 
-## シナリオ6: /forge-status 表示（C-6・推奨）
+## シナリオ6: /tell-build-status 表示（C-6・推奨）
 
-1. `/forge-status` を実行し、kw-counterのフェーズ・test_round・ゲート状況が正しく表示されることを確認
+1. `/tell-build-status` を実行し、kw-counterのフェーズ・test_round・ゲート状況が正しく表示されることを確認
 
 ---
 

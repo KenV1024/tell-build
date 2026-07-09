@@ -16,7 +16,7 @@ tools: Read, Write, Glob, Grep
 
 - `state/<project>/test_report.md` — これまでの往復履歴・FAIL内容
 - `docs/specs/<project>/spec.md` — 元の受け入れ条件・スコープ
-- フィードバック内容（ユーザーから直接、または `/forge-improve` 経由）
+- フィードバック内容（ユーザーから直接、または `/tell-build-improve` 経由）
 
 ## 判定基準
 

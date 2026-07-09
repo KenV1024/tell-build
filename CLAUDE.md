@@ -1,4 +1,4 @@
-# forge プロジェクト CLAUDE.md
+# tell-build プロジェクト CLAUDE.md
 
 グローバル設定（`~/.claude/CLAUDE.md`）も参照すること。
 
@@ -11,7 +11,7 @@
 
 複数の専門サブエージェントが**直列パイプライン**で連携する（対立・議論はさせない）。
 各サブエージェントはClaude Codeの仕様上、他のサブエージェントを呼び出せないため、
-**メインセッション自身が司令塔**となり、`/forge` コマンドでフェーズを順に進行させる。
+**メインセッション自身が司令塔**となり、`/tell-build` コマンドでフェーズを順に進行させる。
 
 ```
 ユーザー依頼
@@ -39,10 +39,10 @@
 ## ディレクトリ構成
 
 ```
-forge/
+tell-build/
 ├── .claude/
 │   ├── agents/       # 6体のサブエージェント定義
-│   └── commands/     # /forge, /forge-status, /forge-improve
+│   └── commands/     # /tell-build, /tell-build-status, /tell-build-improve
 ├── docs/specs/<project>/   # 仕様書（ゲート1の承認対象）
 ├── projects/<project>/     # 生成される各プロダクトの実体
 ├── state/                  # pipeline_status.json / test_report.md / improvement_plan.md
@@ -71,13 +71,13 @@ forge/
 
 ```bash
 # 新規プロジェクトを起動 / 既存プロジェクトを再開
-/forge <project-name> "<作りたいものの説明>"
+/tell-build <project-name> "<作りたいものの説明>"
 
 # 進行中の全プロジェクトの状態確認
-/forge-status
+/tell-build-status
 
 # 公開後のフィードバックから改善サイクルを起動
-/forge-improve <project-name> "<フィードバック内容>"
+/tell-build-improve <project-name> "<フィードバック内容>"
 ```
 
 ---
