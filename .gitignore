@@ -4,3 +4,6 @@ node_modules/
 Thumbs.db
 __pycache__/
 *.pyc
+
+# QAテスト時の一時出力(再生成可能)
+state/*/qa_tmp/
