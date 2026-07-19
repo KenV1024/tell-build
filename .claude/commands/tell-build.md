@@ -36,9 +36,11 @@ project-nameが引数になければユーザーに確認する。
    - `test_round` が3を超えたら `improvement-analyst` を起動し、
      バグなら code-builder へ、仕様の問題なら spec-interviewer へ（ゲート1からやり直し）差し戻す
 
-5. **ゲート2（デプロイ承認）** — `release-manager` エージェントに実行計画（何を・どこへ・戻し方）を
-   作らせ、内容をユーザーに提示して明示的に承認を求める。
-   承認なしに公開・push・課金操作を実行してはならない。承認後、release-managerに実行させ、
+5. **ゲート2（デプロイ承認・ユーザー直接承認方式）** — `release-manager` エージェントに実行計画
+   （何を・どこへ・戻し方）を作らせる（release-managerは計画・事前チェックまで。実行はしない）。
+   メインセッションが計画内容をユーザーに提示し、**AskUserQuestionでユーザー本人から直接承認を得る**。
+   承認なしに公開・push・課金操作を実行してはならない。承認後、**メインセッション自身が**
+   release_log.mdの計画に完全準拠して実行し、「結果」節に実行記録を追記する。
    完了したら `pipeline_status.json` の `phase` を `release` に更新し、手順6へ進む。
 
 6. **フェーズ: report** — `progress-reporter` エージェントを起動し、`reports/<project-name>_<日付>.md` を

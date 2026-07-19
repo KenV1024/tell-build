@@ -1,0 +1,19 @@
+{
+  "_comment": "ソース追加はこのファイルへ1件追記するだけ（geo_watch.pyのコード変更不要）。rss=RSS/Atom取得, diff=RSSなしページの差分チェック。",
+  "rss": [
+    { "name": "Search Engine Land", "url": "https://searchengineland.com/feed" },
+    { "name": "Kevin Indig / Growth Memo", "url": "https://www.growth-memo.com/feed" },
+    { "name": "iPullRank", "url": "https://ipullrank.com/feed" },
+    { "name": "SparkToro", "url": "https://sparktoro.com/blog/feed/" },
+    { "name": "Ahrefs Blog", "url": "https://ahrefs.com/blog/feed/" },
+    { "name": "Semrush Blog", "url": "https://www.semrush.com/blog/feed/" },
+    { "name": "海外SEO情報ブログ（鈴木謙一）", "url": "https://www.suzukikenichi.com/blog/feed/" },
+    { "name": "arXiv（GEO論文）", "url": "http://export.arxiv.org/api/query?search_query=all:%22generative+engine+optimization%22&sortBy=submittedDate&sortOrder=descending&max_results=10" }
+  ],
+  "diff": [
+    { "name": "Seer Interactive", "url": "https://www.seerinteractive.com/insights" },
+    { "name": "Profound blog", "url": "https://www.tryprofound.com/blog" },
+    { "name": "Peec AI blog", "url": "https://www.peec.ai/blog" },
+    { "name": "Scrunch AI blog", "url": "https://www.scrunchai.com/blog" }
+  ]
+}

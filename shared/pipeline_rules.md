@@ -12,7 +12,7 @@
 | 1 | 要件ヒアリング | spec-interviewer | claude-opus-4-8 | 実装しない |
 | 2 | 実装 | code-builder | claude-opus-4-8 | 仕様にない機能を追加しない |
 | 3 | 動作確認 | qa-tester | claude-sonnet-5 | バグを直さない |
-| 4 | 公開・デプロイ | release-manager | claude-sonnet-5 | 承認なしに実行しない |
+| 4 | 公開・デプロイ計画 | release-manager | claude-sonnet-5 | 実行しない（計画・事前チェックまで。実行はゲート2直接承認後にメインセッションが担う） |
 | 5 | 改善トリアージ | improvement-analyst | claude-opus-4-8 | 自分で直さない・仕様を勝手に変えない |
 | 6 | 報告 | progress-reporter | claude-sonnet-5 | 技術判断をしない（翻訳のみ） |
 
@@ -31,10 +31,12 @@
 - 承認対象: `docs/specs/<project>/spec.md`
 - 承認なしにcode-builderへ進んではならない
 
-### ゲート2: デプロイ承認
-- 場所: qa-tester全PASS → release-manager の間
-- 承認対象: release-managerが提示する「何を・どこへ・戻し方は」の実行計画
-- push・本番公開・課金が発生する操作は必ずこのゲートを通す
+### ゲート2: デプロイ承認（2026-07-18改訂: ユーザー直接承認方式）
+- 場所: qa-tester全PASS → デプロイ実行 の間
+- 承認対象: release-managerが作成する「何を・どこへ・戻し方は」の実行計画（`state/<project>/release_log.md`）
+- **承認の取り方**: メインセッション（司令塔）が計画をユーザーに提示し、**AskUserQuestion等でユーザー本人から直接承認を得る**。サブエージェント経由の伝聞承認は設計として存在させない
+- **実行主体**: 承認を直接受領したメインセッションが、release_log.mdの計画に完全準拠して実行し、「結果」節に記録する。**release-managerは計画・事前チェック・リスク評価・ロールバック手順の作成まで**（実行はしない）
+- push・本番公開・課金が発生する操作は必ずこのゲートを通す。承認なしの実行は絶対禁止
 
 ---
 
