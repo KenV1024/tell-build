@@ -5,5 +5,15 @@ Thumbs.db
 __pycache__/
 *.pyc
 
-# QAテスト時の一時出力(再生成可能)
-state/*/qa_tmp/
+# 実運用データ(このリポジトリを日常使いする際に生成される実データ)
+# パブリック公開版には含めない。ローカルでは通常どおり生成・利用される
+/projects/*/
+!/projects/.gitkeep
+/state/*/
+!/state/.gitkeep
+/docs/specs/*/
+!/docs/specs/.gitkeep
+/reports/*
+!/reports/.gitkeep
+/tasks/todo.md
+/tasks/lessons.md
